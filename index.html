@@ -1,72 +1,85 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Manchester United fan site: club news, the new kits and first-team player profiles.">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="design_body.css">
     <link rel="icon" href="Manchester_United_FC_crest.png">
 
     <title>Manchester United</title>
 </head>
-<body>  
-    <div class="ad left">
-      <img src="images/ads/adidas.PNG">
+<body>
+    <aside class="ad left">
+        <img src="images/ads/adidas.PNG" alt="Adidas">
+    </aside>
+    <aside class="ad right">
+        <img src="images/ads/snapdragon.PNG" alt="Snapdragon">
+    </aside>
 
-    </div>
-    <div class="ad right">
-      <img src="images/ads/snapdragon.PNG">
-    </div>
-    <div class="container"  style="background-color: #ffffff">
-        <div class="top-bar">
-        <a href="index.html">
-            <img src="Manchester_United_FC_crest.png">
-        </a>
-    </div>
+    <div class="container" style="background-color: #ffffff">
+        <header class="top-bar">
+            <a href="index.html">
+                <img src="Manchester_United_FC_crest.png" alt="Manchester United crest">
+            </a>
+        </header>
 
-    
-    <div class="menu-bar">
-        <a href="Attackers.html">Attackers</a>
-        <a href="Midfielders.html">Midfielders</a>
-        <a href="Defenders.html">Defenders</a>
-    </div>
+        <nav class="menu-bar">
+            <a href="Attackers.html">Attackers</a>
+            <a href="Midfielders.html">Midfielders</a>
+            <a href="Defenders.html">Defenders</a>
+        </nav>
 
-          <br> 
+        <section class="hero">
+            <p class="hero-kicker">Welcome to</p>
+            <h1>The Theatre of Dreams</h1>
+            <p class="hero-text">The latest news, the new kits and the players who make up the squad.</p>
+            <div class="hero-buttons">
+                <a class="btn" href="Attackers.html">Attackers</a>
+                <a class="btn" href="Midfielders.html">Midfielders</a>
+                <a class="btn" href="Defenders.html">Defenders</a>
+            </div>
+        </section>
 
-          <div class="new-list">
-            <div class="title">Buy Man u shirt now at Man united store</div>
-            <ul>
-                <li class="item"><img class="picture" src="images/News/red shirt.PNG"></li>
-                <li class="item"><img class="picture" src="images/News/white shirt.PNG"></li>
-                <li class="item"><img class="picture" src="images/News/black shirt.PNG"></li>
-                <li class="item"><img class="picture" src="images/News/green shirt.PNG "></li>
-                
-            </ul>
-            
-        
-          
-          <div class="title">Big win against palace</div>
-            <ul>
-                <li class="item"><img class="picture" src="images/News/bruno potm.jfif"></li>
-                <li class="item"><img class="picture" src="images/News/bruno assist.jfif"></li>
-                <li class="item"><img class="picture" src="images/News/zirkzee.PNG"></li>
-                <li class="item"><img class="picture" src="images/News/mount.PNG"></li>
-            </ul>
-          
-          <div class="title">Players that is missing due to Afcon: mazraoui,Amad,Mbeumo</div>
-              <ul>
-                  <li class="item"><img class="picture" src="images/News/mazraoui.PNG"></li>
-                  <li class="item"><img class="picture" src="images/News/amad.PNG"></li>
-                  <li class="item"><img class="picture" src="images/News/mbeumo.PNG"></li>
-              </ul>
-          </div>
-          
-          <div class="footer">              
-                  <div>Sponsored by</div>
-                  <div>Adidas</div>
-                  <div>Snapdragon</div>               
-          </div>
+        <main class="new-list">
+            <section>
+                <h2 class="title">New Kits at the United Store</h2>
+                <p class="section-sub">Grab the latest shirts while the sale lasts.</p>
+                <ul>
+                    <li class="item"><img class="picture" src="images/News/red shirt.PNG" alt="Red shirt"></li>
+                    <li class="item"><img class="picture" src="images/News/white shirt.PNG" alt="White shirt"></li>
+                    <li class="item"><img class="picture" src="images/News/black shirt.PNG" alt="Black shirt"></li>
+                    <li class="item"><img class="picture" src="images/News/green shirt.PNG" alt="Green shirt"></li>
+                </ul>
+            </section>
+
+            <section>
+                <h2 class="title">Big Win Against Palace</h2>
+                <p class="section-sub">Bruno picked up Player of the Match. Here are the best moments from the game.</p>
+                <ul>
+                    <li class="item"><img class="picture" src="images/News/bruno potm.jfif" alt="Bruno Fernandes, Player of the Match"></li>
+                    <li class="item"><img class="picture" src="images/News/bruno assist.jfif" alt="Bruno Fernandes assist"></li>
+                    <li class="item"><img class="picture" src="images/News/zirkzee.PNG" alt="Joshua Zirkzee"></li>
+                    <li class="item"><img class="picture" src="images/News/mount.PNG" alt="Mason Mount"></li>
+                </ul>
+            </section>
+
+            <section>
+                <h2 class="title">Away at AFCON</h2>
+                <p class="section-sub">Mazraoui, Amad and Mbeumo will miss the next few games while they play at the Africa Cup of Nations.</p>
+                <ul>
+                    <li class="item"><img class="picture" src="images/News/mazraoui.PNG" alt="Noussair Mazraoui"></li>
+                    <li class="item"><img class="picture" src="images/News/amad.PNG" alt="Amad Diallo"></li>
+                    <li class="item"><img class="picture" src="images/News/mbeumo.PNG" alt="Bryan Mbeumo"></li>
+                </ul>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div>Sponsored by</div>
+            <div>Adidas &middot; Snapdragon</div>
+        </footer>
     </div>
-          
-        
 </body>
 </html>
