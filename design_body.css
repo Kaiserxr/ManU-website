@@ -1,117 +1,299 @@
-
-
-.title {
-    border-bottom: solid #dc3545 5px;
-    font-size: 28px; 
-    padding-left: 10px;
-
+:root {
+    --red: #da291c;
+    --red-dark: #a61d13;
+    --black: #111111;
+    --gold: #fbe122;
+    --bg: #1b1b1b;
+    --card: #ffffff;
+    --text: #222222;
+    --muted: #666666;
 }
 
-a{
-    text-decoration : none;
-    color: black;
-}
-
-.top-bar {
-    background-color: #dc3545; 
-    padding: 10px;
-    display: flex;
-    align-items: center;
-}
-
-.top-bar img {
-    width: 40px;
-    height: 40px;
-}
-
- 
-.menu-bar {
-    background-color: white;
-    padding: 10px 0;
-    display: flex;
-    justify-content: space-around; 
-    border-bottom: 1px solid #ddd;
-}
-
-.menu-bar a:hover {
-    transform: scale(1.1);
-    filter: brightness(60%);
+* {
+    box-sizing: border-box;
 }
 
 body {
-    background-color: #d1ccc0; 
-    position: relative;
-    font-family: 'Montserrat';
+    margin: 0;
+    background: radial-gradient(circle at top, #2a2a2a 0%, var(--bg) 60%);
+    background-attachment: fixed;
+    font-family: 'Montserrat', 'Roboto', sans-serif;
+    color: var(--text);
 }
 
-.container{
-    width: 70%;
-    margin-left: 15%; 
-    margin-right: 15%; 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    min-height: 100vh;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+}
+
+/* Header */
+
+.top-bar {
+    background: linear-gradient(90deg, var(--red-dark), var(--red));
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    border-bottom: 3px solid var(--gold);
+}
+
+.top-bar::after {
+    content: "MANCHESTER UNITED";
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: 3px;
+}
+
+.top-bar img {
+    width: 52px;
+    height: 52px;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.top-bar a:hover img {
+    transform: rotate(-8deg) scale(1.08);
+}
+
+.menu-bar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: var(--black);
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    padding: 0 16px;
+}
+
+.menu-bar a {
+    color: #ffffff;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 14px;
+    padding: 16px 22px;
+    border-bottom: 3px solid transparent;
+    transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.menu-bar a:hover {
+    color: var(--gold);
+    border-bottom-color: var(--red);
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* News (home page) */
+
+.new-list {
+    padding: 8px 32px 32px;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 32px 0 8px;
+    padding: 4px 0 4px 14px;
+    border-left: 6px solid var(--red);
+    text-transform: capitalize;
 }
 
 .new-list ul {
-    text-align: center;
+    list-style: none;
+    padding: 0;
+    margin: 16px 0 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 20px;
 }
 
 .item {
-    display: inline-flex;
+    display: block;
 }
-
 
 .picture {
-    height: 230px;
-    width: 180px;
-    border-radius: 5px;
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.item:hover .picture {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(218, 41, 28, 0.3);
+}
+
+/* Player cards */
+
+.players {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 28px;
+    padding: 32px;
+    text-align: center;
+}
+
+.player {
+    background: var(--card);
+    border-radius: 14px;
+    overflow: hidden;
+    width: 300px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.player:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 32px rgba(218, 41, 28, 0.25);
+}
+
+.player a {
+    display: block;
+    overflow: hidden;
+}
+
+.player img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+    border-radius: 0;
+    transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.player:hover img {
+    transform: scale(1.06);
+    filter: brightness(85%);
+}
+
+.player hr {
+    border: none;
+    height: 4px;
+    margin: 0;
+    background: linear-gradient(90deg, var(--red), var(--gold));
+}
+
+.player b {
+    display: block;
+    padding: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--red);
+}
+
+/* Single player page: the card holds a description paragraph */
+
+.player:has(p) {
+    width: 100%;
+    max-width: 520px;
+}
+
+.player:has(p):hover,
+.player:has(p):hover img {
+    transform: none;
+    filter: none;
+}
+
+.player:has(p) img {
+    height: auto;
+}
+
+.player p {
+    padding: 0 28px 28px;
+    margin: 0;
+    line-height: 1.7;
+    color: var(--muted);
+    text-align: left;
+}
+
+/* Footer */
 
 .footer {
-    background-color: #dc3545;
+    max-width: 1100px;
+    margin: 0 auto;
+    background-color: var(--black);
     color: #ffffff;
-    text-align:center
+    text-align: center;
+    padding: 24px 16px;
+    border-top: 4px solid var(--red);
+    font-size: 14px;
+    line-height: 1.8;
 }
 
-.left{
-    left: 0;
+.footer div:first-child {
+    color: var(--gold);
+    font-weight: 600;
 }
-.right{
-    right: 0;
-}
+
+/* Side ads */
 
 .ad {
-    position: fixed;            
+    position: fixed;
     top: 50%;
     transform: translateY(-50%);
-    max-width: 15%;            
+    width: calc((100vw - 1100px) / 2 - 40px);
+    max-width: 180px;
+    z-index: 5;
+}
+
+.left {
+    left: 20px;
+}
+
+.right {
+    right: 20px;
 }
 
 .ad img {
     width: 100%;
     height: auto;
-
+    border-radius: 10px;
+    display: block;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
 }
 
-.players {
-    display: flex;
-    justify-content: space-around; 
-    text-align: center; 
-    flex-wrap: wrap;
-    margin-top: 20px;
+@media (max-width: 1400px) {
+    .ad {
+        display: none;
+    }
 }
 
-.player img {
-    width: 310px;
-    height: 310px;
+/* Phones */
 
+@media (max-width: 600px) {
+    .top-bar::after {
+        font-size: 15px;
+        letter-spacing: 2px;
+    }
+
+    .menu-bar a {
+        padding: 14px 10px;
+        font-size: 12px;
+        letter-spacing: 1px;
+    }
+
+    .new-list {
+        padding: 8px 16px 24px;
+    }
+
+    .new-list ul {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .players {
+        padding: 20px 16px;
+    }
 }
-
-.player:hover img{
-    transform: scale(1.1);
-    filter: brightness(60%);
-}
-
-
-
-
-
